@@ -73,25 +73,25 @@
     </div>
   </div>
 </div>
-
+<style>
+  .fixed-botton  p{
+    font-size: 3px;
+  }
+</style>
   <div class="bg-white fixed-bottom">
   <div class="text-center">
             <div>
-                  <h4>Powered By</h4>
-                  <img src="images/logo.png" width="10%">
+                  <b>Powered By</b>
+                  <img src="images/logo.png" style="display: inline;" width="10%">
               </div>
         </div>
         <div class="row">
           <div class="col-12 text-center">
             <p>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;
-                <script>
+           <!--
                   document.write(new Date().getFullYear());
-                </script> | All rights reserved 
-                <!-- This template is made with <i class="icon-heart"
-                  aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </script> | All rights reserved  -->
+                
               </p>  
           </div>
         </div>

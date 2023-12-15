@@ -141,39 +141,15 @@
         <div class="row align-items-center justify-content-center">
 
           <div class="col-4">
-            <h1 class="m-0 site-logo"><a href="index.php"><img src="images/ohhs-line-logo.png" width="80rem" alt=""></a></h1>
+            <h1 class="m-0 site-logo"><a href="index.php"><img src="images/ohhs-line-logo.png" width="10rem" alt=""></a></h1>
           </div>
 
           <div class="col-8">
             <nav class="site-navigation position-relative text-right" role="">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-               <li><a href="https://ourhousehelp.com/index.php#home-section" onclick="home()" class="nav-link">Home</a></li>
-                <li><a href="https://ourhousehelp.com/index.php#about-section" onclick="about()" class="nav-link">About</a></li>
-                <li><a href="https://ourhousehelp.com/index.php#services-section" onclick="service()" class="nav-link">Services</a></li>
-                <li><a href="https://ourhousehelp.com/index.php#projects-section" onclick="reels()">Reels</a></li>
-                <li><a href="https://ourhousehelp.com/index.php#contact-section" onclick="contact()" class="nav-link">Contact</a></li>
-                <li><a href="http://ourhousehelp.com/client/index.php" onclick="run()">Client Login</a></li> 
-               <script>
-               function run(){
-                   
-                   window.location = "client/index.php";
-               }
-               function home(){
-                   window.location = "https://ourhousehelp.com/index.php#home-section";
-               }
-               function about(){
-                   window.location = "https://ourhousehelp.com/index.php#about-section";
-               }
-               function service(){
-                   window.location = "https://ourhousehelp.com/index.php#services-section";
-               }
-               function reels(){
-                   window.location = "https://ourhousehelp.com/index.php#projects-section";
-               }
-               function contact(){
-                   window.location = "https://ourhousehelp.com/index.php#contact-section";
-               }
-               </script>
+              
+                <li><a href="http://ourhousehelp.com/client/index.php" style="color:#2D315E !important" onclick="run()">Back to home</a></li> 
+                
               </ul>
             </nav>
 
