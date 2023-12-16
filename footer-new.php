@@ -9,7 +9,7 @@
 ?>
 
 
-<div class="modal fade"  id="custome" tabindex="-1" role="dialog" aria-labelledby="custom" aria-hidden="true">
+<div class="modal fade"  id="total" tabindex="-1" role="dialog" aria-labelledby="custom" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -82,7 +82,7 @@
   <div class="text-center">
             <div>
                   <b>Powered By</b>
-                  <img src="images/logo.png" style="display: inline;" width="10%">
+                  <img src="images/logo.png" style="display: inline;" width="3%">
               </div>
         </div>
         <div class="row">

@@ -1,6 +1,7 @@
 <?php
 include('header-new.php');
- 
+
+
 ?>
  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
     <!-- Font Awesome CDN  -->
@@ -70,7 +71,7 @@ include('header-new.php');
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 7rem;
+    width: 12rem;
     min-height: 7rem;
     border-radius: 0.5rem;
     border: 2px solid #b5bfd9;
@@ -148,52 +149,76 @@ include('header-new.php');
                   <i style="color:#2D315E" class="fas fa-tool fa-5x new-primary-text"></i>
                 </div>
                 <br>
-                <h2 class="auth-section-title" style="font-size: larger;color:#2D315E">Select at least one service</h2>
+                <h2 class="auth-section-title" style="font-size: larger;color:#2D315E">Apartment Type <?php print_r($_COOKIE['package']);
+?></h2>
+                <?php
+                 
+                ?>
                 <br>
                 <div class="checkbox-wrapper-16">
                 <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" id="cleaning" onclick="clean()">
+                <input class="checkbox-input" type="radio" name="checkboxGroup"  onclick="package(1)">
                 <span class="checkbox-tile">
-                  <span class="checkbox-icon">
-                  <img src="images/cleaning.png" width="50px" alt="">
+                  <span class="checkbox-icon text-center">
+                    <br>
+                 <h1 class="text-center">1</h1>
+                 <span>Self-Contain</span>
+                 <hr>
+                
                   </span>
-                  <span class="checkbox-label">Cleaning</span>
+                  <!-- <span class="checkbox-label" style="color:#2D315E">Cheryl</span> -->
                 </span>
               </label>
               <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" onchange="laund()" id="laundry">
+              <input class="checkbox-input" type="radio" name="checkboxGroup"  onclick="package(2)">
                 <span class="checkbox-tile">
-                  <span class="checkbox-icon">
-                    <img src="images/washing-machine.png" style="opacity: 1;" width="50px" alt="">
+                  <span class="checkbox-icon text-center">
+                    <br>
+                 <h1 class="text-center">2</h1>
+                 <span>Bedroom FLat</span>
+                 <hr>
+                
                   </span>
-                  <span class="checkbox-label">Laundry</span>
+                  <!-- <span class="checkbox-label" style="color:#2D315E">Cheryl +</span> -->
                 </span>
               </label>
               <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" id="errand" onchange="err()">
+              <input class="checkbox-input" type="radio" name="checkboxGroup"  onclick="package(3)">
                 <span class="checkbox-tile">
-                  <span class="checkbox-icon">
-                  <img src="images/maid.png" width="50px" alt="">
+                  <span class="checkbox-icon text-center">
+                    <br>
+                 <h1 class="text-center">3</h1>
+                 <span>Bedroom flat</span>
+                 <hr>
+                
                   </span>
-                  <span class="checkbox-label">Errand</span>
+                  <!-- <span class="checkbox-label" style="color:#2D315E">Jaden</span> -->
                 </span>
               </label>
               <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" id="nanny" onchange="nan()">
+              <input class="checkbox-input" type="radio" name="checkboxGroup"  onclick="package(4)">
                 <span class="checkbox-tile">
-                  <span class="checkbox-icon">
-                  <img src="images/maid (2).png" width="50px" alt="">
+                  <span class="checkbox-icon text-center">
+                    <br>
+                 <h1 class="text-center">4</h1>
+                 <span>Bedroom Flat</span>
+                 <hr>
+                
                   </span>
-                  <span class="checkbox-label">Nanny</span>
+                  <!-- <span class="checkbox-label" style="color:#2D315E">Jaden +</span> -->
                 </span>
               </label>
               <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" id="cook" onchange="co()">
+              <input class="checkbox-input" type="radio" name="checkboxGroup"  onclick="package(5)">
                 <span class="checkbox-tile">
-                  <span class="checkbox-icon">
-                  <img src="images/cooking.png" width="50px" alt="">
+                  <span class="checkbox-icon text-center">
+                    <br>
+                 <h1 class="text-center">5 +</h1>
+                 <span>bedroom flat</span>
+                 <hr>
+                
                   </span>
-                  <span class="checkbox-label">Cook</span>
+                  <!-- <span class="checkbox-label" style="color:#2D315E"><b>Rex</b></span> -->
                 </span>
               </label>
             </div>
@@ -202,7 +227,7 @@ include('header-new.php');
             </div>
             </div>
 
-       
+       <input type="hidden" name="" id="apart_val" value="0">
           </form>
             </div>
           </section>
@@ -232,66 +257,17 @@ include('header-new.php');
      
     </script>
     <script>
-    function clean(){
-      var val =  document.getElementById('cleaning').value;
-      if(val == 1){
-          document.getElementById('cleaning').value = 0; 
-      }else{
-        document.getElementById('cleaning').value = 1; 
-      }
-      }
-      function laund(){
-      var val =  document.getElementById('laundry').value;
-      if(val == 1){
-          document.getElementById('laundry').value = 0; 
-      }else{
-        document.getElementById('laundry').value = 1; 
-      }
-      }
-      function err(){
-      var val =  document.getElementById('errand').value;
-      if(val == 1){
-          document.getElementById('errand').value = 0; 
-      }else{
-        document.getElementById('errand').value = 1; 
-      }
-      }
-      function nan(){
-      var val =  document.getElementById('nanny').value;
-      if(val == 1){
-          document.getElementById('nanny').value = 0; 
-      }else{
-        document.getElementById('nanny').value = 1; 
-      }
-      }
-      function co(){
-      var val =  document.getElementById('cook').value;
-      if(val == 1){
-          document.getElementById('cook').value = 0; 
-      }else{
-        document.getElementById('cook').value = 1; 
-      }
+    function package(apart){
+        document.getElementById('apart_val').value = apart;
       }
     
       function next() {
-        var cleaning =  document.getElementById('cleaning').value;
-        var laundry =  document.getElementById('laundry').value;
-        var errand  =  document.getElementById('errand').value;
-        var nanny =  document.getElementById('nanny').value;
-        var cook  =  document.getElementById('cook').value;
-        var checkboxes = document.getElementsByName('checkboxGroup');
-          var isChecked = false;
-          for (var i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].checked == true) {
-              ready = 1;
-              break;
-            }else{
-              ready = 0;
-            }
-          }
-          if (ready == 0) {
+        
+        var apart = document.getElementById('apart_val').value;
+          
+          if (apart == 0) {
             Toastify({
-              text: "Please choose at least one service",
+              text: "Please select an apartment type",
               duration: 2000,
               newWindow: true,
               close: true,
@@ -317,11 +293,11 @@ include('header-new.php');
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {          
                 // var res = xmlhttp.responseText;    
                 // setTimeout(function(){window.location = 'package_order.php'},100)
-                // show(2);
-                window.location = 'package_order.php';
+                 //show(3);
+                window.location = 'details_order.php';
             }
         };
-        xmlhttp.open("GET","service_cook.php?cleaning="+cleaning+"&&laundry="+laundry+"&&errand="+errand+"&&nanny="+nanny+"&&cook="+cook,true);
+        xmlhttp.open("GET","apart_cook.php?apart="+apart);
         xmlhttp.send();
     }
      

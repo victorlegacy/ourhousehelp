@@ -1,3 +1,6 @@
+<?php 
+  include('config.php');
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -115,13 +118,13 @@
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   
-
+<!-- 
   <div id="overlayer"></div>
   <div class="loader">
     <div class="spinner-border text-primary" style="color: #2D315E !important;" role="status">
       <span class="sr-only">Loading...</span>
     </div>
-  </div>
+  </div> -->
 
 
   <div class="site-wrap">

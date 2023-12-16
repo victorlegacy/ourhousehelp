@@ -1,6 +1,7 @@
 <?php
 include('header-new.php');
- 
+
+
 ?>
  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
     <!-- Font Awesome CDN  -->
@@ -70,7 +71,7 @@ include('header-new.php');
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 7rem;
+    width: 12rem;
     min-height: 7rem;
     border-radius: 0.5rem;
     border: 2px solid #b5bfd9;
@@ -127,91 +128,7 @@ include('header-new.php');
   }
 
 </style>
-<body style="overflow-y: hidden !important;">
-  <div id="progress-container">
-    <div id="progress-bar"></div>
-</div>
-  <div class='pattern'></div>
-    <main class="page-auth">
-      <div class="container">
-        <div class="custom-form-width">
-          <section class="auth-wrapper">
-            <div style="margin:auto;overflow-y:hidden !important;" class="my-10" >
-              <form method="" action="product_upload.html">
-              <div class="additionalSection" id="section1">
-                <div class="arrow-container">
-                  <!-- <div class="arrow left" onclick="show(1)"> < </div> -->
-                  <div class="arrow" onclick="show(2)">  > </div>
-                </div>
-                <div class="animate__animated animate__backInRight bg-white p-5 rounded">
-                <div class="icon-div ">
-                  <i style="color:#2D315E" class="fas fa-tool fa-5x new-primary-text"></i>
-                </div>
-                <br>
-                <h2 class="auth-section-title" style="font-size: larger;color:#2D315E">Select at least one service</h2>
-                <br>
-                <div class="checkbox-wrapper-16">
-                <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" id="cleaning" onclick="clean()">
-                <span class="checkbox-tile">
-                  <span class="checkbox-icon">
-                  <img src="images/cleaning.png" width="50px" alt="">
-                  </span>
-                  <span class="checkbox-label">Cleaning</span>
-                </span>
-              </label>
-              <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" onchange="laund()" id="laundry">
-                <span class="checkbox-tile">
-                  <span class="checkbox-icon">
-                    <img src="images/washing-machine.png" style="opacity: 1;" width="50px" alt="">
-                  </span>
-                  <span class="checkbox-label">Laundry</span>
-                </span>
-              </label>
-              <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" id="errand" onchange="err()">
-                <span class="checkbox-tile">
-                  <span class="checkbox-icon">
-                  <img src="images/maid.png" width="50px" alt="">
-                  </span>
-                  <span class="checkbox-label">Errand</span>
-                </span>
-              </label>
-              <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" id="nanny" onchange="nan()">
-                <span class="checkbox-tile">
-                  <span class="checkbox-icon">
-                  <img src="images/maid (2).png" width="50px" alt="">
-                  </span>
-                  <span class="checkbox-label">Nanny</span>
-                </span>
-              </label>
-              <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" id="cook" onchange="co()">
-                <span class="checkbox-tile">
-                  <span class="checkbox-icon">
-                  <img src="images/cooking.png" width="50px" alt="">
-                  </span>
-                  <span class="checkbox-label">Cook</span>
-                </span>
-              </label>
-            </div>
-              <br>
-                <a class="btn btn-warning" style="width: 40%;background:#2D315E;color:white" onclick="next()">Next</a>
-            </div>
-            </div>
-
-       
-          </form>
-            </div>
-          </section>
-        </div>
-      </div>
-    </main>
-    
-    <script>
-
+<script>
       function show(id){
         next_id = id + 1;
         prev_id = id -1 ;
@@ -226,11 +143,143 @@ include('header-new.php');
         }
         document.getElementById(next).style.display="none";
      
-      }
-      
-    
-     
+      }               
     </script>
+<body style="overflow-y: hidden !important;">
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+</div>
+  <div class='pattern'></div>
+    <main class="page-auth">
+      <div class="container">
+        <div class="custom-form-width">
+          <section class="auth-wrapper">
+            <div style="margin:auto;overflow-y:hidden !important;" class="my-10" >
+              <form method="POST" action="details_cook.php">
+              <div class="additionalSection" id="section1">
+                  <!-- <div class="arrow-container">
+                    <div class="arrow" onclick="show(2)">  > </div>
+                  </div> -->
+                  <br>
+                  <h2 class="auth-section-title" style="font-size: larger;color:#2D315E">Your Details</h2>
+                  <br>
+                      <div class="form-group">
+                          <label>First Name</label>
+                          <input type="text" class="form-control" name="fname">
+                      </div>
+                      <div class="form-group">
+                          <label>Last Name</label>
+                          <input type="text" class="form-control" name="lname">
+                      </div>                     
+                      <div class="form-group">
+                          <label>Phone Number</label>
+                          <input type="text" class="form-control" name="phone" >
+                      </div>
+                      <div class="form-group">
+                          <label>E-mail</label>
+                          <input type="text" class="form-control" name="email" >
+                      </div>
+                        
+                      <a class="btn btn-warning btn-auth-submit" style="width: 40%;color:white" onclick="show('2')">Next</a >                
+                </div>
+
+            <!-- Section 2 -->
+
+            <div id="section2" class="additionalSection" style="display: none;">
+              <div class="arrow-container">
+                <div class="arrow left" onclick="show(1)"> < </div>
+                
+              </div>
+              <div class="animate__animated animate__backInRight">
+                <div class="icon-div">
+                  <i style="color:#2D315E" class="fas fa-user-circle fa-5x new-primary-text"></i>
+                </div>
+                <br>
+                 
+                  <h2 class="auth-section-title" style="font-size: larger;color:#2D315E">Your Details</h2>
+                  <br>     
+                    <div class="form-group">
+                        <label>Location</label>
+                        <select class="form-control" name="" id="location">
+                          <option value="abuja">Abuja   </option>
+                          <option value="lagos">Lagos  </option>
+                          <option value="ph">Port Harcout  </option>
+                        </select>
+                    </div>
+                      <div class="form-group">
+                          <label>Address</label>
+                          <textarea id="address" class="form-control" name="address" rows="4"></textarea>
+                          
+                      </div>               
+                      <div class="form-group">
+                          <label>Landmark close to address(optional)</label>
+                          <input id="phone" type="text" class="form-control" name="phone" >
+                      </div>
+                      <div class="form-group">
+                          <label>Birthmonth (optional)</label>
+                          <select id="bmonth" name="bmonth" class="form-control">
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                                </select>
+                      </div>
+                      <div class="form-group">
+                          <label>Birthday(optional)</label>
+                          <select id="bday" name="bday" class="form-control">
+                               <option value="01">1</option>
+                                  <option value="02">2</option>
+                                  <option value="03">3</option>
+                                  <option value="04">4</option>
+                                  <option value="05">5</option>
+                                  <option value="06">6</option>
+                                  <option value="07">7</option>
+                                  <option value="08">8</option>
+                                  <option value="09">9</option>
+                                  <option value="10">10</option>
+                                  <option value="11">11</option>
+                                  <option value="12">12</option>
+                                  <option value="13">13</option>
+                                  <option value="14">14</option>
+                                  <option value="15">15</option>
+                                  <option value="16">16</option>
+                                  <option value="17">17</option>
+                                  <option value="18">18</option>
+                                  <option value="19">19</option>
+                                  <option value="20">20</option>
+                                  <option value="21">21</option>
+                                  <option value="22">22</option>
+                                  <option value="23">23</option>
+                                  <option value="24">24</option>
+                                  <option value="25">25</option>
+                                  <option value="26">26</option>
+                                  <option value="27">27</option>
+                                  <option value="28">28</option>
+                                  <option value="29">29</option>
+                                  <option value="30">30</option>
+                                  <option value="31">31</option>
+                         </select>
+                      </div>                        
+                      <button type="submit" class="btn btn-warning btn-auth-submit" style="width: 40%;color:white" >Next</button>          
+                  </div>
+                </div>  
+                <div id="section3" class="additionalSection" style="display: none;">
+                </div>    
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
     <script>
     function clean(){
       var val =  document.getElementById('cleaning').value;

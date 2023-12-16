@@ -1,5 +1,56 @@
 <?php
 include('header-new.php');
+$order = $_COOKIE;
+$service = unserialize($_COOKIE['service']);
+echo $package = $_COOKIE['package'];
+$apart = $_COOKIE['apart'];
+$details = unserialize($_COOKIE['details']);
+
+$valueToCount = 1;
+$values = array_values($service);
+$occurrences = array_count_values($values); 
+$count = isset($occurrences[$valueToCount]) ? $occurrences[$valueToCount] : 0;
+  
+ if($count == 1){
+    $cleaning = $service['cleaning'];
+    $laundry =  $service['laundry'];
+    $errand = $service['errand'];
+    $nanny = $service['nanny'];
+    $cook = $service['cook'];
+   if($cleaning == 1){
+    $service = 'cleaning'; 
+    $sql = "SELECT * FROM pricing WHERE service = '$service' AND package = '$package'";
+    $run = mysqli_query($conn,$sql);
+    $serv = mysqli_fetch_all($run,MYSQLI_ASSOC);
+    $price = $serv[0]['price'];
+   }elseif($laundry == 1){
+    $service = 'laundry'; 
+    $sql = "SELECT * FROM pricing WHERE service = '$service' AND package = '$package'";
+    $run = mysqli_query($conn,$sql);
+    $serv = mysqli_fetch_all($run,MYSQLI_ASSOC);
+    $price = $serv[0]['price'];
+   }elseif($errand == 1){
+    $service = 'errands'; 
+    $sql = "SELECT * FROM pricing WHERE service = '$service' AND package = '$package'";
+    $run = mysqli_query($conn,$sql);
+    $serv = mysqli_fetch_all($run,MYSQLI_ASSOC);
+    $price = $serv[0]['price'];
+   }elseif($nanny == 1){
+    $service = 'nanny'; 
+    $sql = "SELECT * FROM pricing WHERE service = '$service' AND package = '$package'";
+    $run = mysqli_query($conn,$sql);
+    $serv = mysqli_fetch_all($run,MYSQLI_ASSOC);
+    $price = $serv[0]['price'];
+   }else{
+    $service = 'cooking'; 
+    $sql = "SELECT * FROM pricing WHERE service = '$service' AND package = '$package'";
+    $run = mysqli_query($conn,$sql);
+    $serv = mysqli_fetch_all($run,MYSQLI_ASSOC);
+    $price = $serv[0]['price'];
+   }
+ }else{
+echo '1';
+ }
  
 ?>
  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
@@ -101,15 +152,9 @@ include('header-new.php');
     background-position: 50% 50%;
   }
 
-  .checkbox-wrapper-16 .checkbox-tile:hover {
-    border-color: #2260ff;
-  }
+ 
 
-  .checkbox-wrapper-16 .checkbox-tile:hover:before {
-    transform: scale(1);
-    opacity: 1;
-  }
-
+    
   .checkbox-wrapper-16 .checkbox-icon {
     transition: 0.375s ease;
     color: #494949;
@@ -137,72 +182,175 @@ include('header-new.php');
         <div class="custom-form-width">
           <section class="auth-wrapper">
             <div style="margin:auto;overflow-y:hidden !important;" class="my-10" >
-              <form method="" action="product_upload.html">
+              <form method="">
               <div class="additionalSection" id="section1">
                 <div class="arrow-container">
                   <!-- <div class="arrow left" onclick="show(1)"> < </div> -->
-                  <div class="arrow" onclick="show(2)">  > </div>
+                  <!-- <div class="arrow" onclick="show(2)">  > </div> -->
                 </div>
                 <div class="animate__animated animate__backInRight bg-white p-5 rounded">
-                <div class="icon-div ">
-                  <i style="color:#2D315E" class="fas fa-tool fa-5x new-primary-text"></i>
-                </div>
-                <br>
-                <h2 class="auth-section-title" style="font-size: larger;color:#2D315E">Select at least one service</h2>
-                <br>
+                <h2 class="auth-section-title" style="font-size: larger;color:#2D315E">Order Summary </h2>
+                <hr>
+                <label for="">Service</label>
                 <div class="checkbox-wrapper-16">
-                <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" id="cleaning" onclick="clean()">
-                <span class="checkbox-tile">
+                    <?php
+                    //  $cleaning = $service['cleaning'];
+                    //  $laundry =  $service['laundry'];
+                    //  $errand = $service['errand'];
+                    //  $nanny = $service['nanny'];
+                    //  $ccok = $service['cook'];
+                    if($cleaning == 1){?>
+                     <label class="checkbox-wrapper">
+                 <span class="checkbox-tile">
                   <span class="checkbox-icon">
                   <img src="images/cleaning.png" width="50px" alt="">
                   </span>
                   <span class="checkbox-label">Cleaning</span>
                 </span>
               </label>
-              <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" onchange="laund()" id="laundry">
-                <span class="checkbox-tile">
+                    <?php }elseif($laundry == 1){?>
+
+    
+                        <label class="checkbox-wrapper">
+                 <span class="checkbox-tile">
                   <span class="checkbox-icon">
                     <img src="images/washing-machine.png" style="opacity: 1;" width="50px" alt="">
                   </span>
                   <span class="checkbox-label">Laundry</span>
                 </span>
               </label>
-              <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" id="errand" onchange="err()">
-                <span class="checkbox-tile">
+                    <?php }elseif($errand == 1){?>
+
+                        <label class="checkbox-wrapper">
+                 <span class="checkbox-tile">
                   <span class="checkbox-icon">
                   <img src="images/maid.png" width="50px" alt="">
                   </span>
                   <span class="checkbox-label">Errand</span>
                 </span>
               </label>
-              <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" id="nanny" onchange="nan()">
-                <span class="checkbox-tile">
+                        <?php }elseif($nanny == 1){?>
+                            <label class="checkbox-wrapper">
+                 <span class="checkbox-tile">
                   <span class="checkbox-icon">
                   <img src="images/maid (2).png" width="50px" alt="">
                   </span>
                   <span class="checkbox-label">Nanny</span>
                 </span>
               </label>
-              <label class="checkbox-wrapper">
-                <input class="checkbox-input" type="checkbox" name="checkboxGroup" id="cook" onchange="co()">
-                <span class="checkbox-tile">
+                            <?php }elseif($cook == 1){?>
+                                <label class="checkbox-wrapper">
+                 <span class="checkbox-tile">
                   <span class="checkbox-icon">
                   <img src="images/cooking.png" width="50px" alt="">
                   </span>
                   <span class="checkbox-label">Cook</span>
                 </span>
               </label>
+               <?php }else{return;}    ?>
+               
+               
+            
+            
+         
             </div>
-              <br>
-                <a class="btn btn-warning" style="width: 40%;background:#2D315E;color:white" onclick="next()">Next</a>
+            <hr>
+             <b>Package</b>
+             <br> 
+            <?php 
+                if($order['package'] == 'cheryl'){?>
+                    <label class="checkbox-wrapper">
+              
+                <span class="checkbox-tile">
+                  <span class="checkbox-icon text-center">
+                    <br>
+                 <h1 class="text-center">4x</h1>
+                 <span>per month</span>
+                 
+                
+                  </span>
+                </span>
+              </label>
+                <?php }elseif($order['package'] == 'cheryl_plus'){?>
+                    <label class="checkbox-wrapper">
+              
+                <span class="checkbox-tile">
+                  <span class="checkbox-icon text-center">
+                    <br>
+                 <h1 class="text-center">8x</h1>
+                 <span>per month</span>
+                 
+                  </span>
+                </span>
+              </label>
+                    <?php }elseif($order['package'] == 'jaden'){ ?>
+                        <label class="checkbox-wrapper">
+              
+                <span class="checkbox-tile">
+                  <span class="checkbox-icon text-center">
+                    <br>
+                 <h1 class="text-center">12x</h1>
+                 <span>per month</span>
+               
+                  </span>
+                </span>
+              </label>
+               <?php  }elseif($order['package'] == 'jaden_plus'){?>
+                <label class="checkbox-wrapper">
+              
+                <span class="checkbox-tile">
+                  <span class="checkbox-icon text-center">
+                    <br>
+                 <h1 class="text-center">16x</h1>
+                 <span>per month</span>
+                  
+                
+                  </span>
+              </span>
+              </label>
+                <?php }else{ ?>
+                    <label class="checkbox-wrapper">
+             
+                <span class="checkbox-tile">
+                  <span class="checkbox-icon text-center">
+                    <br>
+                 <h1 class="text-center">20x</h1>
+                 <span>per month</span>
+                 <hr>
+                
+                  </span>
+                </span>
+              </label>
+                    <?php }
+            ?>
+            <hr>
+              <b>Apartment Type</b>
+             <br> 
+             <label for="">
+             <?php 
+                $apart =  $_COOKIE['apart'];
+                if($apart == 1){
+                    echo "Self Contain";
+                }elseif($apart == 2){
+                    echo "2 BEDROOM APARTMENT";
+                }elseif($apart == 3){
+                    echo "3 BEDROOM APARTMENT";
+                }elseif($apart == 4){
+                    echo "4 BEDROOM APARTMENT";
+                }elseif($apart == 5){
+                    echo "5+ BEDROOM APARTMENT";
+                }
+             ?></label>
+             <hr>
+            <div class="label">
+                 <b>Total:</b>
+                 <label for="">N <?php echo $price ?></label>
+            </div>
+                <div class="submit">
+                    <a class="btn btn-warning" style="width: 40%;background:#2D315E;color:white" onclick="next()">Next</a>
+                </div>
             </div>
             </div>
-
-       
           </form>
             </div>
           </section>
