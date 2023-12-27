@@ -247,12 +247,7 @@ echo '1';
                   <span class="checkbox-label">Cook</span>
                 </span>
               </label>
-               <?php }else{return;}    ?>
-               
-               
-            
-            
-         
+               <?php }else{return;}    ?> 
             </div>
             <hr>
              <b>Package</b>
