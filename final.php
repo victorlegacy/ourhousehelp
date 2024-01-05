@@ -2,7 +2,7 @@
 include('header-new.php');
 $order = $_COOKIE;
 $service = unserialize($_COOKIE['service']);
-echo $package = $_COOKIE['package'];
+$package = $_COOKIE['package'];
 $apart = $_COOKIE['apart'];
 $details = unserialize($_COOKIE['details']);
 
@@ -18,11 +18,8 @@ $count = isset($occurrences[$valueToCount]) ? $occurrences[$valueToCount] : 0;
     $nanny = $service['nanny'];
     $cook = $service['cook'];
    if($cleaning == 1){
-    $service = 'cleaning'; 
-    $sql = "SELECT * FROM pricing WHERE service = '$service' AND package = '$package'";
-    $run = mysqli_query($conn,$sql);
-    $serv = mysqli_fetch_all($run,MYSQLI_ASSOC);
-    $price = $serv[0]['price'];
+    $price = $_COOKIE['s_price'];
+    $price = $price + 7000; 
    }elseif($laundry == 1){
     $service = 'laundry'; 
     $sql = "SELECT * FROM pricing WHERE service = '$service' AND package = '$package'";
@@ -49,7 +46,7 @@ $count = isset($occurrences[$valueToCount]) ? $occurrences[$valueToCount] : 0;
     $price = $serv[0]['price'];
    }
  }else{
-echo '1';
+  $serv = 1;
  }
  
 ?>
@@ -199,6 +196,7 @@ echo '1';
                     //  $errand = $service['errand'];
                     //  $nanny = $service['nanny'];
                     //  $ccok = $service['cook'];
+                    print_r($service);
                     if($cleaning == 1){?>
                      <label class="checkbox-wrapper">
                  <span class="checkbox-tile">
@@ -338,11 +336,14 @@ echo '1';
              ?></label>
              <hr>
             <div class="label">
-                 <b>Total:</b>
-                 <label for="">N <?php echo $price ?></label>
+                 <b>Total:</b><br>
+                 <h3 style="color:#2D315E">₦ <?php echo number_format($price)  ?></h3>
+                 <input type="hidden" value="<?php echo $price ?>" name="price" id="price">
             </div>
+            <hr>
                 <div class="submit">
-                    <a class="btn btn-warning" style="width: 40%;background:#2D315E;color:white" onclick="next()">Next</a>
+                    <!-- <a class="btn btn-warning" style="width: 40%;background:#2D315E;color:white" onclick="next()">Next</a> -->
+                    <a href="save.php" class="btn" style="width: 40%;background:#2D315E;color:white">Finish</a>
                 </div>
             </div>
             </div>
@@ -415,7 +416,11 @@ echo '1';
         document.getElementById('cook').value = 1; 
       }
       }
-    
+
+
+
+
+       
       function next() {
         var cleaning =  document.getElementById('cleaning').value;
         var laundry =  document.getElementById('laundry').value;

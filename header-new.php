@@ -144,14 +144,14 @@
         <div class="row align-items-center justify-content-center">
 
           <div class="col-4">
-            <h1 class="m-0 site-logo"><a href="index.php"><img src="images/ohhs-line-logo.png" width="10rem" alt=""></a></h1>
+            <h1 class="m-0 site-logo"><a href="index.php"><img src="images/ohhs-line-logo.png" width="30rem" alt=""></a></h1>
           </div>
 
           <div class="col-8">
             <nav class="site-navigation position-relative text-right" role="">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
               
-                <li><a href="http://ourhousehelp.com/client/index.php" style="color:#2D315E !important" onclick="run()">Back to home</a></li> 
+                <li><a href="index.php" style="color:#2D315E !important" >Back to home</a></li> 
                 
               </ul>
             </nav>

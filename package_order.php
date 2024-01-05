@@ -1,8 +1,12 @@
 <?php
 include('header-new.php');
 
-print_r($_COOKIE['package']);
-
+// print_r($_COOKIE['package']);
+//Check if cleaning is among the services
+$order = $_COOKIE;
+$service = unserialize($_COOKIE['service']);
+  $cleaning = $service['cleaning'];
+ 
 ?>
  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
     <!-- Font Awesome CDN  -->
@@ -152,7 +156,7 @@ print_r($_COOKIE['package']);
                 <br>
                 <h2 class="auth-section-title" style="font-size: larger;color:#2D315E">Choose a package</h2>
                 <?php
-                 
+                 echo $cleaning
                 ?>
                 <br>
                 <div class="checkbox-wrapper-16">
@@ -294,7 +298,16 @@ print_r($_COOKIE['package']);
                 // var res = xmlhttp.responseText;    
                 // setTimeout(function(){window.location = 'package_order.php'},100)
                  //show(3);
-                window.location = 'apart_order.php';
+              
+                 <?php 
+                 if($cleaning == 1){?>
+                   window.location = 'apart_order.php';
+                <?php }else{?>
+                 
+                  window.location = 'details_order.php';
+                  <?php 
+                 }
+              ?>
             }
         };
         xmlhttp.open("GET","package_cook.php?package="+package);

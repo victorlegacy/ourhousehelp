@@ -263,17 +263,18 @@ include('header.php');
               <div class="row mb-4">
                 <div class="form-group col-12" style="text-align: left;">
                   <?php if ($package == 'cheryl' OR $package == 'cheryl_2' OR $package == 'cheryl_3' ) { ?>
-                <label for="" >Choose a day for the service</label>  
-                <select id="day" onchange="days()" name="day" required class="form-control" placeholder="Subject of the message">
-                  <!-- <option disabled value="">Choose a day for the service</option> -->
-                    
-                  <option value="" disabled selected hidden>--choose--</option>  
-                    <option value="monday" >Monday</option>
-                    <option value="tuesday" >Tuesday</option>
-                    <option value="wednesday">Wednesday</option>
-                    <option value="thursday">Thursday</option>
-                    <option value="friday">Friday</option> <option value="sat_sun">Saturday or Sunday</option> 
-                  </select>
+                  <label for="" >Choose a day for the service</label>  
+                  <select id="day" onchange="days()" name="day" required class="form-control" placeholder="Subject of the message">
+                    <!-- <option disabled value="">Choose a day for the service</option> -->
+                      
+                      <option value="" disabled selected hidden>--choose--</option>  
+                      <option value="monday" >Monday</option>
+                      <option value="tuesday" >Tuesday</option>
+                      <option value="wednesday">Wednesday</option>
+                      <option value="thursday">Thursday</option>
+                      <option value="friday">Friday</option> 
+                      <option value="sat_sun">Saturday or Sunday</option> 
+                    </select>
                 <?php }else{?>
                   <input type="hidden" name="day" value="multiple" >
                    <label for="" >Choose first day for service</label>  

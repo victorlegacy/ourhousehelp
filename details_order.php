@@ -1,7 +1,5 @@
 <?php
 include('header-new.php');
-
-
 ?>
  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
     <!-- Font Awesome CDN  -->
@@ -161,6 +159,7 @@ include('header-new.php');
                     <div class="arrow" onclick="show(2)">  > </div>
                   </div> -->
                   <br>
+ 
                   <h2 class="auth-section-title" style="font-size: larger;color:#2D315E">Your Details</h2>
                   <br>
                       <div class="form-group">

@@ -294,7 +294,7 @@ include('header-new.php');
                 // var res = xmlhttp.responseText;    
                 // setTimeout(function(){window.location = 'package_order.php'},100)
                  //show(3);
-                window.location = 'details_order.php';
+                window.location = 'spec.php';
             }
         };
         xmlhttp.open("GET","apart_cook.php?apart="+apart);

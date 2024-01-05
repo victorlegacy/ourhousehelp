@@ -13,4 +13,4 @@ $service = ['cleaning'=>$cleaning,'laundry'=>$laundry,'errand'=>$errand,'nanny'=
 // print_r($_SESSION['service']);
 $service = serialize($service);
 setcookie('service', $service, time() + (86400 * 30), "/");
-?>
+?>  
