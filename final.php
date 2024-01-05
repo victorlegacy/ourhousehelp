@@ -196,7 +196,7 @@ $count = isset($occurrences[$valueToCount]) ? $occurrences[$valueToCount] : 0;
                     //  $errand = $service['errand'];
                     //  $nanny = $service['nanny'];
                     //  $ccok = $service['cook'];
-                    print_r($service);
+                    // print_r($service);
                     if($cleaning == 1){?>
                      <label class="checkbox-wrapper">
                  <span class="checkbox-tile">

@@ -156,7 +156,7 @@ $service = unserialize($_COOKIE['service']);
                 <br>
                 <h2 class="auth-section-title" style="font-size: larger;color:#2D315E">Choose a package</h2>
                 <?php
-                 echo $cleaning
+                //  echo $cleaning
                 ?>
                 <br>
                 <div class="checkbox-wrapper-16">
