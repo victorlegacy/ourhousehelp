@@ -148,8 +148,5 @@ Toilet/Bathroom:
 <option value="2250">3</option>
 <option value="3000">4</option>
 <option value="3750">5</option>
-
-
-
-          </select>
- </div> 
+</select>
+</div> 

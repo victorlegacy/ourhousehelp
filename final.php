@@ -2,7 +2,7 @@
 include('header-new.php');
 $order = $_COOKIE;
 $service = unserialize($_COOKIE['service']);
-$package = $_COOKIE['package'];
+echo $package = $_COOKIE['package'];
 $apart = $_COOKIE['apart'];
 $details = unserialize($_COOKIE['details']);
 
@@ -49,6 +49,16 @@ $count = isset($occurrences[$valueToCount]) ? $occurrences[$valueToCount] : 0;
   $serv = 1;
  }
  
+
+ if($package == 'cheryl_plus'){
+    $price = $price +  7500;
+  }elseif($package == 'jaden'){
+    $price = $price + 10000;
+  }elseif($package == 'jaden_plus'){
+      $price = $price + 17500;
+  }else{
+    $price = $price;
+  }
 ?>
  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
     <!-- Font Awesome CDN  -->
