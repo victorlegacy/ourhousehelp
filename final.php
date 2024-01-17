@@ -19,10 +19,10 @@ $count = isset($occurrences[$valueToCount]) ? $occurrences[$valueToCount] : 0;
     $cook = $service['cook'];
    if($cleaning == 1){
     $price = $_COOKIE['s_price'];
-    $price = $price + 7000; 
+    $price = $price + 8000; 
    }elseif($laundry == 1){
     $service = 'laundry'; 
-    $sql = "SELECT * FROM pricing WHERE service = '$service' AND package = '$package'";
+    $sql = "SELECT * FROM pricixng WHERE service = '$service' AND package = '$package'";
     $run = mysqli_query($conn,$sql);
     $serv = mysqli_fetch_all($run,MYSQLI_ASSOC);
     $price = $serv[0]['price'];
