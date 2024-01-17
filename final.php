@@ -51,11 +51,11 @@ $count = isset($occurrences[$valueToCount]) ? $occurrences[$valueToCount] : 0;
  
 
  if($package == 'cheryl_plus'){
-    $price = $price +  7500;
+    $price = $price +  8000;
   }elseif($package == 'jaden'){
     $price = $price + 10000;
   }elseif($package == 'jaden_plus'){
-      $price = $price + 17500;
+      $price = $price + 18000;
   }else{
     $price = $price;
   }
