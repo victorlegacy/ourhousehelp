@@ -211,7 +211,7 @@ include('header-new.php');
                           
                       </div>               
                       <div class="form-group">
-                          <label>Landmark close to address(optional)</label>
+                          <label>Landmark close to address</label>
                           <input id="phone" type="text" class="form-control" name="phone" >
                       </div>
                       <div class="form-group">
